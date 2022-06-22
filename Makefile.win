@@ -1,0 +1,52 @@
+# Project: TextProject
+# Makefile created by Dev-C++ 5.11
+
+CPP      = g++.exe -D__DEBUG__
+CC       = gcc.exe -D__DEBUG__
+WINDRES  = windres.exe
+OBJ      = StudentBLL.o sys_menu.o commonpositiontool.o StudentAction.o StudentFile.o StudentADT.o frmLogin.o applicationClient.o commoncolortool.o
+LINKOBJ  = StudentBLL.o sys_menu.o commonpositiontool.o StudentAction.o StudentFile.o StudentADT.o frmLogin.o applicationClient.o commoncolortool.o
+LIBS     = -L"D:/Program Files (x86)/Dev-Cpp/MinGW64/lib" -L"D:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc -g3
+INCS     = -I"D:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"D:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"D:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
+CXXINCS  = -I"D:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"D:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"D:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"D:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
+BIN      = TextProject.exe
+CXXFLAGS = $(CXXINCS) -g3
+CFLAGS   = $(INCS) -g3
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CC) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+StudentBLL.o: StudentBLL.c
+	$(CC) -c StudentBLL.c -o StudentBLL.o $(CFLAGS)
+
+sys_menu.o: sys_menu.c
+	$(CC) -c sys_menu.c -o sys_menu.o $(CFLAGS)
+
+commonpositiontool.o: commonpositiontool.c
+	$(CC) -c commonpositiontool.c -o commonpositiontool.o $(CFLAGS)
+
+StudentAction.o: StudentAction.c
+	$(CC) -c StudentAction.c -o StudentAction.o $(CFLAGS)
+
+StudentFile.o: StudentFile.c
+	$(CC) -c StudentFile.c -o StudentFile.o $(CFLAGS)
+
+StudentADT.o: StudentADT.c
+	$(CC) -c StudentADT.c -o StudentADT.o $(CFLAGS)
+
+frmLogin.o: frmLogin.c
+	$(CC) -c frmLogin.c -o frmLogin.o $(CFLAGS)
+
+applicationClient.o: applicationClient.c
+	$(CC) -c applicationClient.c -o applicationClient.o $(CFLAGS)
+
+commoncolortool.o: commoncolortool.c
+	$(CC) -c commoncolortool.c -o commoncolortool.o $(CFLAGS)
