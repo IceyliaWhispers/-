@@ -1,0 +1,6 @@
+enum COLOR
+{
+	BLACK = 0, BLUE, GREEN, LIGHTGREEN, RED, VIOLET, YELLOW, WHITE, GRAY, PALEBLUE, PALEGREEN, PALELIGHTGREEN, PALERED, PALEVILET, PALEYELLOW, BRIGHTWHITE
+}color;
+//?
+void SetColor(unsigned short ForeColor, unsigned short BackGroundColor);
